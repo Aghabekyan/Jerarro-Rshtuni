@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
@@ -23,6 +23,35 @@ SECRET_KEY = '2iwl1jwu0m=dzh@@&-4!1oqukwfh1der!c!*o2+)h0%qxkq&9+'
 DEBUG = True
 
 TEMPLATE_DEBUG = True
+TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        # ...
+        'OPTIONS': {
+            'context_processors': [
+                # ...
+                'django.template.context_processors.request',
+            ],
+        },
+    },
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "homepage/static"),
+)
+TEMPLATE_CONTEXT_PROCESSORS = (
+    "django.contrib.auth.context_processors.auth",
+    "django.core.context_processors.debug",
+    "django.core.context_processors.i18n",
+    "django.core.context_processors.media",
+    "django.core.context_processors.static",
+    "django.core.context_processors.tz",
+    "django.contrib.messages.context_processors.messages"
+)
+
 
 ALLOWED_HOSTS = []
 
