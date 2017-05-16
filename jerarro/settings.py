@@ -25,7 +25,7 @@ DEBUG = True
 TEMPLATE_DEBUG = True
 TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 
-TEMPLATE_DIRS = ('/home/templates/mike', '/home/templates/john')
+# TEMPLATE_DIRS = (os.path.join(BASE_DIR, 'homepage/templates'), '/home/templates/john')
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
