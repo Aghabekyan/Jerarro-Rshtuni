@@ -60,13 +60,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
-    'django_admin_bootstrapped',
+    # 'django_admin_bootstrapped',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'homepage'
 )
 
 DAB_FIELD_RENDERER = 'django_admin_bootstrapped.renderers.BootstrapFieldRenderer'
@@ -84,6 +85,9 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'jerarro.urls'
 
 WSGI_APPLICATION = 'jerarro.wsgi.application'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+MEDIA_URL = '/media/'
 
 
 # Database
