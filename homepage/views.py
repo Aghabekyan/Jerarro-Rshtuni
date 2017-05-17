@@ -13,7 +13,7 @@ def index(request):
 def catalog(request, category):
     catalog_data = Catalog.objects.filter(category__name=category).order_by('-sorting')
 
-    paginator = Paginator(catalog_data, 3)
+    paginator = Paginator(catalog_data, 60)
 
     page = request.GET.get('page')
     try:
