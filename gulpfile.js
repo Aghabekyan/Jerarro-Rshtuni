@@ -30,10 +30,10 @@ gulp.task('less', function() {
 
 // Minify compiled CSS
 gulp.task('minify-css', ['less'], function() {
-    return gulp.src('static/homepage/css/agency.css')
+    return gulp.src('homepage/static/homepage/css/agency.css')
         .pipe(cleanCSS({ compatibility: 'ie8' }))
         .pipe(rename({ suffix: '.min' }))
-        .pipe(gulp.dest('static/homepage/css'))
+        .pipe(gulp.dest('homepage/static/homepage/css'))
         .pipe(browserSync.reload({
             stream: true
         }))
@@ -98,7 +98,7 @@ gulp.task('sass', function() {
     return gulp.src('scss/agency.scss')
         .pipe(sass())
         .pipe(header(banner, { pkg: pkg }))
-        .pipe(gulp.dest('static/homepage/css'))
+        .pipe(gulp.dest('homepage/static/homepage/css'))
         .pipe(browserSync.reload({
             stream: true
         }))
