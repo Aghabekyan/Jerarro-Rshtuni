@@ -11,15 +11,32 @@ def get_file_path_img(instance, filename):
     return os.path.join('img/', filename)
 
 
+class ShoesType(models.Model):
+    name = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        ordering = ["-id"]
+
+
 class Catalog(models.Model):
     title = models.CharField(max_length=255)
     # desc = models.TextField()
-    img = models.ImageField(upload_to=get_file_path_img, default='')
-    # category = models.ManyToManyField('Category')
+    img = models.ImageField(upload_to=get_file_path_img, default='', blank=True, null=True)
+    category = models.ForeignKey('ShoesType', blank=True, null=True)
+    sorting = models.IntegerField(blank=True, null=True)
 
-    # def image_tag(self):
-    #     return u'<img src="%s" height="100"/>' % self.img.url
-    # image_tag.allow_tags = True
+    def image_tag(self):
+        try:
+            return u'<img src="%s" height="70"/>' % self.img.url
+        except ValueError:
+            return u'<img src="http://lorax-d.com.ua/bitrix/templates/main/img/noimg.jpg" height="70"/>'
+    image_tag.allow_tags = True
+
+    def __str__(self):
+        return self.title
 
     class Meta:
         ordering = ["-id"]
