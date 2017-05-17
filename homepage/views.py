@@ -9,7 +9,9 @@ def index(request):
     return render(request, 'homepage/index.html', {})
 
 
-def catalog(request):
-    data = Catalog.objects.all().order_by('-sorting')
-    context = {'data': data}
+def catalog(request, category):
+    data = Catalog.objects.filter(category__name=category).order_by('-sorting')
+    print category
+    context = {'data': data,
+               'category': category}
     return render(request, 'homepage/catalog.html', context)

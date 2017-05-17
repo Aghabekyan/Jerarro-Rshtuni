@@ -8,7 +8,12 @@
         <div class="row">
             <div class="col-lg-12">
                 <h1 class="page-header">каталог обуви 
-                    <small>для мужчин</small>
+                    {% if category == "male"  %} 
+                        <small>ДЛЯ МУЖЧИН</small>
+                    {% endif %}   
+                    {% if category == 'female'  %} 
+                        <small>для женщин</small>
+                    {% endif %} 
                 </h1>
             </div>
         </div>
@@ -25,8 +30,10 @@
                 <p>{{item.title}}</p>
             </div>
         {% if forloop.counter|divisibleby:3  %} 
-        </div>
-        <div class="row">
+            </div>
+            {% if not forloop.last and not forloop.first %}
+                <div class="row">
+            {% endif %}
         {% endif %}   
         {% endfor %}
         <!-- /.row -->
