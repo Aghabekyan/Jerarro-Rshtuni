@@ -67,6 +67,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'easy_thumbnails',
     'homepage'
 )
 
@@ -118,3 +119,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
 STATIC_URL = '/static/'
+
+THUMBNAIL_QUALITY = 50
+THUMBNAIL_PROGRESSIVE = 100
+THUMBNAIL_MEDIA_ROOT = MEDIA_ROOT + '/thumb/'
+THUMBNAIL_MEDIA_URL = MEDIA_URL + '/thumb/'

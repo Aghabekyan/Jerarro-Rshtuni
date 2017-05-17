@@ -10,6 +10,6 @@ def index(request):
 
 
 def catalog(request):
-    data = Catalog.objects.all()
+    data = Catalog.objects.all().order_by('-sorting')
     context = {'data': data}
     return render(request, 'homepage/catalog.html', context)
