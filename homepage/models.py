@@ -24,9 +24,10 @@ class ShoesType(models.Model):
 class Catalog(models.Model):
     title = models.CharField(max_length=255)
     # desc = models.TextField()
-    img = models.ImageField(upload_to=get_file_path_img, default='', blank=True, null=True)
+    img = models.ImageField(upload_to=get_file_path_img, default='',
+                            blank=True, null=True, max_length=255)
     category = models.ForeignKey('ShoesType', blank=True, null=True)
-    sorting = models.IntegerField(blank=True, null=True)
+    sorting = models.IntegerField(default=0)
 
     def image_tag(self):
         try:
@@ -35,7 +36,7 @@ class Catalog(models.Model):
             return u'<img src="http://lorax-d.com.ua/bitrix/templates/main/img/noimg.jpg" height="70"/>'
     image_tag.allow_tags = True
 
-    def __str__(self):
+    def __unicode__(self):
         return self.title
 
     class Meta:
