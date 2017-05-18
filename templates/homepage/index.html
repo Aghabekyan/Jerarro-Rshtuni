@@ -186,7 +186,8 @@
             </div>
             <div class="row">
                 <div class="col-lg-12">
-                    <form  action="/asdsa/assadsad" method="POST">
+                    <form  action="/contacts/post/" method="POST">
+                       {% csrf_token %}
                         <div class="row">
                             <div class="col-md-3">
                                 <form name="sentMessage" id="contactForm" novalidate>
@@ -201,18 +202,22 @@
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Контактная имя *">
+                                    <label for="first_name">Контактная имя *</label>
+                                    <input name="name" type="text" class="form-control" placeholder="" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="электронная почта *" >
+                                    <label for="first_name">электронная почта *</label>
+                                    <input name="email" type="email" class="form-control" placeholder="" required>
                                 </div>
                                 <div class="form-group">
-                                    <input type="tel" class="form-control" placeholder="Номер телефона *" >
+                                    <label for="first_name">Номер телефона</label>
+                                    <input name="phone" type="phone" class="form-control" placeholder="" >
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="form-group">
-                                    <textarea class="form-control" placeholder="ваш вопрос  *" ></textarea>
+                                    <label for="first_name">ваш вопрос</label>
+                                    <textarea name="massage" class="form-control" placeholder="" ></textarea>
                                 </div>
                             </div>
                             <div class="clearfix"></div>

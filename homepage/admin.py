@@ -13,5 +13,10 @@ class ShoesTypeAdmin(admin.ModelAdmin):
     pass
 
 
+class ContactsAdmin(admin.ModelAdmin):
+    pass
+
+
 admin.site.register(Catalog, CatalogAdmin)
 admin.site.register(ShoesType, ShoesTypeAdmin)
+admin.site.register(Contacts, ContactsAdmin)

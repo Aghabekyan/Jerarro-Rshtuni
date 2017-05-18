@@ -77,6 +77,33 @@ TEMPLATE_CONTEXT_PROCESSORS = TCP + ('django.core.context_processors.request', )
 
 # DAB_FIELD_RENDERER = 'django_admin_bootstrapped.renderers.BootstrapFieldRenderer'
 
+SUIT_CONFIG = {
+    # header
+    'ADMIN_NAME': 'Jerarro Admin',
+    # 'HEADER_DATE_FORMAT': 'l, j. F Y',
+    # 'HEADER_TIME_FORMAT': 'H:i',
+
+    # forms
+    # 'SHOW_REQUIRED_ASTERISK': True,  # Default True
+    # 'CONFIRM_UNSAVED_CHANGES': True, # Default True
+
+    # menu
+    # 'SEARCH_URL': '/admin/auth/user/',
+    # 'MENU_ICONS': {
+    #    'sites': 'icon-leaf',
+    #    'auth': 'icon-lock',
+    # },
+    # 'MENU_OPEN_FIRST_CHILD': True, # Default True
+    # 'MENU_EXCLUDE': ('auth.group',),
+    'MENU': (
+        {'app': 'homepage', 'icon': 'icon-lock'},
+    ),
+
+    # misc
+    # 'LIST_PER_PAGE': 15
+}
+
+
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',

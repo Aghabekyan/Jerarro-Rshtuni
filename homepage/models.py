@@ -41,3 +41,16 @@ class Catalog(models.Model):
 
     class Meta:
         ordering = ["-id"]
+
+
+class Contacts(models.Model):
+    name = models.CharField(max_length=255)
+    email = models.CharField(max_length=255)
+    phone = models.CharField(max_length=255)
+    massage = models.CharField(max_length=255)
+
+    def __unicode__(self):
+        return self.name
+
+    class Meta:
+        ordering = ["-id"]

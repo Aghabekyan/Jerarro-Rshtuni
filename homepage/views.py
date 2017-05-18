@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.shortcuts import redirect
 from homepage.models import *
 # Create your views here.
 
@@ -26,3 +27,13 @@ def catalog(request, category):
     context = {'data': contacts,
                'category': category}
     return render(request, 'homepage/catalog.html', context)
+
+
+def contacts_post(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        phone = request.POST.get('phone')
+        massage = request.POST.get('massage')
+        Contacts.objects.create(name=name, email=email, phone=phone, massage=massage)
+    return redirect('/')
