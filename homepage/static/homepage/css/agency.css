@@ -466,6 +466,24 @@ section {
 aside.clients img {
   margin: 50px auto; }
 
+section#aaaa {
+  position: relative;
+  background-image: url("http://www.phaidon.com/resource/p4889-1131.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+section#aaaa:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: inline-block;
+  background-color: black;
+  opacity: 0.5; }
+
 section#contact {
   background-color: #222222;
   background-image: url("../img/map-image.png");
