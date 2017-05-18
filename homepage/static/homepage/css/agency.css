@@ -261,6 +261,13 @@ section {
   margin: 15px 0;
   text-transform: none; }
 
+.service-unit-img {
+  height: 200px;
+  width: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; }
+
 #portfolio .portfolio-item {
   margin: 0 0 15px;
   right: 0; }
