@@ -14,7 +14,9 @@ class ShoesTypeAdmin(admin.ModelAdmin):
 
 
 class ContactsAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('name', 'email', 'phone', 'massage', 'answer', 'comment')
+    fields = ('name', 'email', 'phone', 'massage', 'answer', 'comment')
+    readonly_fields = ('name', 'email', 'phone', 'massage')
 
 
 admin.site.register(Catalog, CatalogAdmin)

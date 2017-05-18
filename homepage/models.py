@@ -44,10 +44,12 @@ class Catalog(models.Model):
 
 
 class Contacts(models.Model):
-    name = models.CharField(max_length=255)
-    email = models.CharField(max_length=255)
-    phone = models.CharField(max_length=255)
-    massage = models.CharField(max_length=255)
+    name = models.CharField(max_length=255, blank=True, null=True)
+    email = models.CharField(max_length=255, blank=True, null=True)
+    phone = models.CharField(max_length=255, blank=True, null=True)
+    massage = models.TextField(max_length=1000, blank=True, null=True)
+    answer = models.BooleanField(default=False)
+    comment = models.TextField(max_length=1000, blank=True, null=True)
 
     def __unicode__(self):
         return self.name
