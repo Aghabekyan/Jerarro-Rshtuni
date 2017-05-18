@@ -52,8 +52,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.tz",
     "django.contrib.messages.context_processors.messages"
 )
-
-
 ALLOWED_HOSTS = []
 
 
@@ -61,6 +59,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = (
     # 'django_admin_bootstrapped',
+    'suit',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -70,6 +69,11 @@ INSTALLED_APPS = (
     'easy_thumbnails',
     'homepage'
 )
+
+
+from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
+
+TEMPLATE_CONTEXT_PROCESSORS = TCP + ('django.core.context_processors.request', )
 
 # DAB_FIELD_RENDERER = 'django_admin_bootstrapped.renderers.BootstrapFieldRenderer'
 

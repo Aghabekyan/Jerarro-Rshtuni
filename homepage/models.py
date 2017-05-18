@@ -31,9 +31,9 @@ class Catalog(models.Model):
 
     def image_tag(self):
         try:
-            return u'<img src="%s" height="70"/>' % self.img.url
+            return u'<img src="%s" style="height:70px"/>' % self.img.url
         except ValueError:
-            return u'<img src="http://lorax-d.com.ua/bitrix/templates/main/img/noimg.jpg" height="70"/>'
+            return u'<img src="http://lorax-d.com.ua/bitrix/templates/main/img/noimg.jpg" style="height:70px"/>'
     image_tag.allow_tags = True
 
     def __unicode__(self):
